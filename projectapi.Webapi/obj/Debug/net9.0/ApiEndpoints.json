@@ -1,0 +1,35 @@
+[
+  {
+    "ContainingType": "projectapi.Webapi.Controllers.Object2DController",
+    "Method": "Create",
+    "RelativePath": "Object2D",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "object2D",
+        "Type": "projectapi.Webapi.Object2D",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "Object2D"
+  },
+  {
+    "ContainingType": "projectapi.Webapi.Controllers.Object2DController",
+    "Method": "Create",
+    "RelativePath": "Object2D",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "object2D",
+        "Type": "projectapi.Webapi.Object2D",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
