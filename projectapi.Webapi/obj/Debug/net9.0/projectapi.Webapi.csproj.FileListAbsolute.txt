@@ -79,3 +79,4 @@ C:\Users\Thech\.school\Periode3\projectapi\projectapi.Webapi\bin\Debug\net9.0\ru
 C:\Users\Thech\.school\Periode3\projectapi\projectapi.Webapi\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Thech\.school\Periode3\projectapi\projectapi.Webapi\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Thech\.school\Periode3\projectapi\projectapi.Webapi\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Thech\.school\Periode3\projectapi\projectapi.Webapi\bin\Debug\net9.0\Avans.Identity.Dapper.dll
