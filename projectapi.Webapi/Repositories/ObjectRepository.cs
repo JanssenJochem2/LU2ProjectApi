@@ -71,8 +71,7 @@ namespace projectapi.Webapi.Repositories
                 var selectQuery = "SELECT * FROM Worlds WHERE WorldId = @WorldId";
                 return await sqlConnection.QuerySingleOrDefaultAsync<Models.World>(selectQuery, new { WorldId = newWorldId });
             }
-
-            
+      
         }
 
         public async Task<string?> GetUser(Models.LoginRequest loginRequest)

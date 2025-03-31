@@ -15,10 +15,10 @@ builder.Services
         //options.User.RequireUniqueEmail = true;
         //options.SignIn.RequireConfirmedPhoneNumber = true;
 
-        //options.Password.RequireDigit = true;
-        //options.Password.RequireLowercase = true;
-        //options.Password.RequireUppercase = true;
-        //options.Password.RequiredLength = 10;
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequiredLength = 10;
     })
     .AddDapperStores(options =>
     {
