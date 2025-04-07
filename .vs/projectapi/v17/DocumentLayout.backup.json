@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\controllers\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|solutionrelative:projectapi.webapi\\controllers\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|solutionrelative:projectapi.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\repositories\\objectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|solutionrelative:projectapi.webapi\\repositories\\objectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\interfaces\\iobjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|solutionrelative:projectapi.webapi\\interfaces\\iobjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\controllers\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|solutionrelative:projectapi.webapi\\controllers\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thech\\AppData\\Roaming\\Microsoft\\UserSecrets\\9b400497-3e05-42f9-9655-a06b36e40f05\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\repositories\\objectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|solutionrelative:projectapi.webapi\\repositories\\objectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{993F5579-47B2-4779-8AFB-A7BE9A1ACF84}|projectapi.Webapi\\projectapi.Webapi.csproj|c:\\users\\thech\\.school\\periode3\\projectapi\\projectapi.webapi\\models\\object.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,13 +41,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\Thech\\AppData\\Roaming\\Microsoft\\UserSecrets\\9b400497-3e05-42f9-9655-a06b36e40f05\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\9b400497-3e05-42f9-9655-a06b36e40f05\\secrets.json",
               "ToolTip": "C:\\Users\\Thech\\AppData\\Roaming\\Microsoft\\UserSecrets\\9b400497-3e05-42f9-9655-a06b36e40f05\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\9b400497-3e05-42f9-9655-a06b36e40f05\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-12T22:25:21.14Z"
             },
@@ -78,54 +78,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ObjectController.cs",
-              "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Controllers\\ObjectController.cs",
-              "RelativeDocumentMoniker": "projectapi.Webapi\\Controllers\\ObjectController.cs",
-              "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Controllers\\ObjectController.cs",
-              "RelativeToolTip": "projectapi.Webapi\\Controllers\\ObjectController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T16:06:08.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ObjectRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Repositories\\ObjectRepository.cs",
-              "RelativeDocumentMoniker": "projectapi.Webapi\\Repositories\\ObjectRepository.cs",
-              "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Repositories\\ObjectRepository.cs",
-              "RelativeToolTip": "projectapi.Webapi\\Repositories\\ObjectRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwEwAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T16:04:52.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IObjectRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
-              "RelativeDocumentMoniker": "projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
-              "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
-              "RelativeToolTip": "projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T16:04:12.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Program.cs",
               "RelativeDocumentMoniker": "projectapi.Webapi\\Program.cs",
               "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Program.cs",
               "RelativeToolTip": "projectapi.Webapi\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T17:04:17.493Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ObjectController.cs",
+              "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Controllers\\ObjectController.cs",
+              "RelativeDocumentMoniker": "projectapi.Webapi\\Controllers\\ObjectController.cs",
+              "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Controllers\\ObjectController.cs",
+              "RelativeToolTip": "projectapi.Webapi\\Controllers\\ObjectController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T16:06:08.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ObjectRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Repositories\\ObjectRepository.cs",
+              "RelativeDocumentMoniker": "projectapi.Webapi\\Repositories\\ObjectRepository.cs",
+              "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Repositories\\ObjectRepository.cs",
+              "RelativeToolTip": "projectapi.Webapi\\Repositories\\ObjectRepository.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAIwEwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T16:04:52.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IObjectRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
+              "RelativeDocumentMoniker": "projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
+              "ToolTip": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
+              "RelativeToolTip": "projectapi.Webapi\\Interfaces\\IObjectRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T16:04:12.683Z"
             }
           ]
         }
