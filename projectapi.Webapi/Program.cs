@@ -56,7 +56,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-//auth endpoint
+//authorization endpoint
 app.MapGroup("/auth")
     .MapIdentityApi<IdentityUser>();
 
