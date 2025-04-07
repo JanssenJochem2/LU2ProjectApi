@@ -2416,11 +2416,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\projectapi.Webapi.csproj",
+      "projectUniqueName": "C:\\Users\\Thech\\.school\\Periode3\\LU2ProjectApi\\projectapi.Webapi\\projectapi.Webapi.csproj",
       "projectName": "projectapi.Webapi",
-      "projectPath": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\projectapi.Webapi.csproj",
+      "projectPath": "C:\\Users\\Thech\\.school\\Periode3\\LU2ProjectApi\\projectapi.Webapi\\projectapi.Webapi.csproj",
       "packagesPath": "C:\\Users\\Thech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\obj\\",
+      "outputPath": "C:\\Users\\Thech\\.school\\Periode3\\LU2ProjectApi\\projectapi.Webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

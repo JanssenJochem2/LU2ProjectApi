@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ebz2nUScq38=",
+  "dgSpecHash": "AF4n5aj/qqM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Thech\\.school\\Periode3\\projectapi\\projectapi.Webapi\\projectapi.Webapi.csproj",
+  "projectFilePath": "C:\\Users\\Thech\\.school\\Periode3\\LU2ProjectApi\\projectapi.Webapi\\projectapi.Webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thech\\.nuget\\packages\\avans.identity.dapperorm\\1.0.3\\avans.identity.dapperorm.1.0.3.nupkg.sha512",
     "C:\\Users\\Thech\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
