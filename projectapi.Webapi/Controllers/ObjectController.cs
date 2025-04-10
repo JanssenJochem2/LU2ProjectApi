@@ -31,7 +31,7 @@ public class ObjectController : ControllerBase
     }
 
     [HttpPost("GetWorlds")]
-    public async Task<ActionResult> GetWorldsByUser(Models.PlayerRequest playerRequest)
+    public async Task<ActionResult> GetWorldsByUser()
     {
         Guid User_id = new Guid(_auth.GetCurrentAuthenticatedUserId());
 
@@ -126,7 +126,7 @@ public class ObjectController : ControllerBase
 
         return Ok( new
         {
-            message = $"Created {objectData.ObjectId}"
+            message = $"Placed object"
         });
     }
 

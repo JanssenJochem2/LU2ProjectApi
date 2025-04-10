@@ -57,7 +57,7 @@
 
     public class InsertObjectRequest
     {
-        public Guid? ObjectId { get; set; }
+        //public Guid? ObjectId { get; set; }
         public Guid WorldId { get; set; }
         public string PrefabId { get; set; }
         public float PositionX { get; set; }
