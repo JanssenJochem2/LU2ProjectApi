@@ -35,8 +35,9 @@ builder.Services
 
 // Add services to the container.
 builder.Services.AddTransient<IObjectRepository, ObjectRepository>(o => new ObjectRepository(connectionString));
-//Hoe word dit gefixt?
-
+//builder.Services.AddScoped<IAuthenticationService, AspNetIdentityAuthenticationService>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<IAuthenticationService, AspNetIdentityAuthenticationService>();
 builder.Services.AddControllers();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

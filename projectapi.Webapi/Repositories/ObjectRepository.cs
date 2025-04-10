@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Dapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -13,24 +14,17 @@ namespace projectapi.Webapi.Repositories
     public class ObjectRepository : IObjectRepository
     {
         public string sqlConnectionString;
+
         public ObjectRepository(string connectionString)
         {
             sqlConnectionString = connectionString;
         }
 
-        public async Task<List<Models.Object>> ReadObjectsAsync(Guid worldId)
-        {
-            using (var sqlConnection = new SqlConnection(sqlConnectionString))
-            {
-                var query = "SELECT * FROM Objects WHERE WorldId = @WorldId";
-                var objects = await sqlConnection.QueryAsync<Models.Object>(query, new { WorldId = worldId });
+        //Worlds
 
-                return objects.ToList();
-            }
-        }
-
-        public async Task<IEnumerable<Models.World>> GetWorlds(string playerId)
+        public async Task<IEnumerable<Models.World>> GetWorlds(Guid playerId)
         {
+
             using (var sqlConnection = new SqlConnection(sqlConnectionString))
             {
                 var query = "SELECT * FROM Worlds WHERE PlayerId = @PlayerId";
@@ -48,9 +42,9 @@ namespace projectapi.Webapi.Repositories
             }
         }
 
-        public async Task<Models.World?> AddWorlds(string PlayerId, string WorldName, int Width, int Height)
+        public async Task<Models.World?> AddWorlds(Guid PlayerId, string WorldName, int Width, int Height)
         {
-      
+
             Guid newWorldId = Guid.NewGuid();
 
             using (var sqlConnection = new SqlConnection(sqlConnectionString))
@@ -62,7 +56,7 @@ namespace projectapi.Webapi.Repositories
                 await sqlConnection.ExecuteAsync(insertQuery, new
                 {
                     WorldId = newWorldId,
-                    PlayerId = PlayerId,  
+                    PlayerId = PlayerId,
                     WorldName = WorldName,
                     Width = Width,
                     Height = Height
@@ -71,20 +65,34 @@ namespace projectapi.Webapi.Repositories
                 var selectQuery = "SELECT * FROM Worlds WHERE WorldId = @WorldId";
                 return await sqlConnection.QuerySingleOrDefaultAsync<Models.World>(selectQuery, new { WorldId = newWorldId });
             }
-      
+
         }
 
-        public async Task<string?> GetUser(Models.LoginRequest loginRequest)
+        public async Task<List<Models.Object>> ReadObjectsAsync(Guid worldId)
         {
             using (var sqlConnection = new SqlConnection(sqlConnectionString))
             {
-                var query = "SELECT Id, PasswordHash FROM [Periode3].[auth].[AspNetUsers] WHERE UserName = @UserName";
+                var query = "SELECT * FROM Objects WHERE WorldId = @WorldId";
+                var objects = await sqlConnection.QueryAsync<Models.Object>(query, new { WorldId = worldId });
 
-                return await sqlConnection.QuerySingleOrDefaultAsync<string>(
-                    query, new { UserName = loginRequest.Username }
-                );
+                return objects.ToList();
             }
         }
+
+        //Removed
+        //public async Task<string?> GetUser(Models.LoginRequest loginRequest)
+        //{
+        //    using (var sqlConnection = new SqlConnection(sqlConnectionString))
+        //    {
+        //        var query = "SELECT Id, PasswordHash FROM [Periode3].[auth].[AspNetUsers] WHERE UserName = @UserName";
+
+        //        return await sqlConnection.QuerySingleOrDefaultAsync<string>(
+        //            query, new { UserName = loginRequest.Username }
+        //        );
+        //    }
+        //}
+
+        //Objects
 
         public async Task<Models.Object?> ReadObjectDataAsync(Guid objectId)
         {

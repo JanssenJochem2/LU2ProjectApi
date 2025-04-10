@@ -1,8 +1,10 @@
 using System.Net;
 using System.Reflection;
 using Azure.Core;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using projectapi.Webapi.Interfaces;
 using projectapi.Webapi.Models;
 using projectapi.Webapi.Repositories;
@@ -19,45 +21,26 @@ public class ObjectController : ControllerBase
 
     private readonly ILogger<ObjectController> _logger;
     private readonly IObjectRepository _objectRepository;
+    private readonly IAuthenticationService _auth;
 
-    public ObjectController(ILogger<ObjectController> logger, IObjectRepository objectRepository)
+    public ObjectController(ILogger<ObjectController> logger, IObjectRepository objectRepository, IAuthenticationService Auth)
     {
         _logger = logger;
         _objectRepository = objectRepository;
-    }
-
-    //[HttpGet(Name = "ObjectData")] only use the GET if route is public, else use POST
-
-    [HttpPost("LoadAllObjects1")]
-    public ActionResult LoadAllObjects(Models.ReadAllObjectsRequest objectData)
-    {
-        // Call the repository method with WorldId
-        var result = _objectRepository.ReadObjectsAsync(objectData.WorldId).Result;
-
-        // Check if no objects were found
-        if (result == null || result.Count == 0)
-        {
-            return NotFound($"No objects found in world with ID: {objectData.WorldId}");
-        }
-
-        return Ok(result);
+        _auth = Auth;
     }
 
     [HttpPost("GetWorlds")]
     public async Task<ActionResult> GetWorldsByUser(Models.PlayerRequest playerRequest)
     {
-        // Ensure the playerId is not null or empty
-        if (string.IsNullOrEmpty(playerRequest.PlayerId))
-        {
-            return BadRequest("PlayerId is required.");
-        }
+        Guid User_id = new Guid(_auth.GetCurrentAuthenticatedUserId());
 
         // Fetch worlds by PlayerId
-        var result = await _objectRepository.GetWorlds(playerRequest.PlayerId);
+        var result = await _objectRepository.GetWorlds(User_id);
 
         if (result == null || !result.Any())
         {
-            return NotFound($"No worlds found for user with ID: {playerRequest.PlayerId}");
+            return NotFound($"No worlds found for user with ID: {User_id}");
         }
 
         return Ok(result);
@@ -65,10 +48,12 @@ public class ObjectController : ControllerBase
 
 
     [HttpPost("AddWorlds")]
-    public async Task<ActionResult> AddWorlds(Models.World objectData)
+    public async Task<ActionResult> AddWorlds(Models.World2 objectData)
     {
+        Guid User_id = new Guid(_auth.GetCurrentAuthenticatedUserId());
+
         // Extract the AccessToken from the request body
-        var result = await _objectRepository.AddWorlds(objectData.PlayerId, objectData.WorldName, objectData.Width, objectData.Height);
+        var result = await _objectRepository.AddWorlds(User_id, objectData.WorldName, objectData.Width, objectData.Height);
 
         // Check if no objects were found
         if (result == null)
@@ -90,6 +75,25 @@ public class ObjectController : ControllerBase
         return NotFound($"No objectdata found with ID: {objectData.WorldId}");
     }
 
+    //Objects
+
+    //[HttpGet(Name = "ObjectData")] only use the GET if route is public, else use POST
+
+    [HttpPost("LoadAllObjects")]
+    public ActionResult LoadAllObjects(Models.ReadAllObjectsRequest2 objectData)
+    {
+        // Call the repository method with WorldId
+        var result = _objectRepository.ReadObjectsAsync(objectData.WorldId).Result;
+
+        // Check if no objects were found
+        if (result == null || result.Count == 0)
+        {
+            return NotFound($"No objects found in world with ID: {objectData.WorldId}");
+        }
+
+        return Ok(result);
+    }
+
 
     [HttpPost("LoadObjectData")]
     public ActionResult LoadObjectData(Models.ReadObjectsRequest objectData)  // Your original method
@@ -101,16 +105,16 @@ public class ObjectController : ControllerBase
         return NotFound($"No objectdata found with ID: {objectData.ObjectId}");
     }
 
-    [HttpPost("GetUser")]
-    public async Task<ActionResult> GetUser(Models.LoginRequest loginRequest)
-    {
-        var result = await _objectRepository.GetUser(loginRequest);
+    //[HttpPost("GetUser")]
+    //public async Task<ActionResult> GetUser(Models.LoginRequest loginRequest)
+    //{
+    //    var result = await _objectRepository.GetUser(loginRequest);
 
-        if (result == null)
-            return NotFound($"No user found with username: {loginRequest.Username}");
+    //    if (result == null)
+    //        return NotFound($"No user found with username: {loginRequest.Username}");
 
-        return Ok(result);
-    }
+    //    return Ok(result);
+    //}
 
     [HttpPost("AddObject")]
     public async Task<IActionResult> AddObject(Models.InsertObjectRequest objectData)
