@@ -70,7 +70,9 @@ public class ObjectController : ControllerBase
     {
         var result = _objectRepository.DeleteWorld(objectData.WorldId).Result;
         if (result == null)
+        {
             return Ok(result);
+        }
 
         return NotFound($"No objectdata found with ID: {objectData.WorldId}");
     }
@@ -99,10 +101,13 @@ public class ObjectController : ControllerBase
     public ActionResult LoadObjectData(Models.ReadObjectsRequest objectData)  // Your original method
     {
         var result = _objectRepository.ReadObjectDataAsync(objectData.ObjectId).Result;
-        if (result == null)
-            return Ok(result);
 
-        return NotFound($"No objectdata found with ID: {objectData.ObjectId}");
+        if (result == null)
+        {
+            return NotFound($"No objectdata found with ID: {objectData.ObjectId}");
+        }
+
+        return Ok(result);
     }
 
     //[HttpPost("GetUser")]
