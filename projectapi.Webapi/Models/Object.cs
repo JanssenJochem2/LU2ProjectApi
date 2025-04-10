@@ -13,6 +13,16 @@
         public int LayerZ { get; set; }
     }
 
+    public class World
+    {
+        public Guid WorldId { get; set; }
+        public string PlayerId { get; set; }
+        public string WorldName { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+
+    }
+
     public class refreshUser
     {
         public string refreshToken { get; set; }
@@ -23,15 +33,6 @@
         public string Username { get; set; }
     }
 
-    public class World
-    {
-        public Guid WorldId { get; set; }
-        public string PlayerId { get; set; } 
-        public string WorldName { get; set; } 
-        public int Width { get; set; }
-        public int Height { get; set; } 
-
-    }
     public class RemoveWorld
     {
         public Guid WorldId { get; set; }
@@ -92,12 +93,39 @@
     public class ReadAllObjectsRequest
     {
         public Guid WorldId { get; set; }
-        public Guid ObjectId { get; set; }
     }
 
     public class ObjectCollection
     {
         public IEnumerable<Models.Object> Objects { get; set; }
 
+    }
+
+    public class Object2
+    {
+        public Guid? ObjectId { get; set; }
+        public Guid WorldId { get; set; }
+        public string PrefabId { get; set; }
+        public float PositionX { get; set; }
+        public float PositionY { get; set; }
+        public float ScaleX { get; set; }
+        public float ScaleY { get; set; }
+        public float RotationZ { get; set; }
+        public int LayerZ { get; set; }
+    }
+
+    public class World2
+    {
+        public Guid? WorldId { get; set; }
+        public Guid? PlayerId { get; set; }
+        public string WorldName { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+
+    }
+
+    public class ReadAllObjectsRequest2
+    {
+        public Guid WorldId { get; set; }
     }
 }
