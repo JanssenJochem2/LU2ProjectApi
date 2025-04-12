@@ -27,7 +27,7 @@ namespace projectapi.Webapi.Repositories
 
             using (var sqlConnection = new SqlConnection(sqlConnectionString))
             {
-                var query = "SELECT * FROM Worlds WHERE PlayerId = @PlayerId";
+                var query = "SELECT * FROM Worlds WHERE PlayerId = @PlayerId ORDER BY CreatedAt DESC";
                 return await sqlConnection.QueryAsync<Models.World>(query, new { PlayerId = playerId });
             }
         }
