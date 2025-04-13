@@ -52,10 +52,26 @@ public class ObjectController : ControllerBase
     {
         Guid User_id = new Guid(_auth.GetCurrentAuthenticatedUserId());
 
-        // Extract the AccessToken from the request body
+     
+        if (string.IsNullOrWhiteSpace(objectData.WorldName) || objectData.WorldName.Length < 1 || objectData.WorldName.Length > 25)
+        {
+            return BadRequest("De naam van de wereld moet tussen de 1 en 25 karakters lang zijn.");
+        }
+
+        var userWorlds = await _objectRepository.GetWorlds(User_id);
+
+        if (userWorlds.Any(w => w.WorldName.Equals(objectData.WorldName, StringComparison.OrdinalIgnoreCase)))
+        {
+            return BadRequest("Je hebt al een wereld met deze naam. Kies een andere naam.");
+        }
+
+        if (userWorlds.Count() >= 5)
+        {
+            return BadRequest("Je kunt niet meer dan 5 werelden hebben.");
+        }
+
         var result = await _objectRepository.AddWorlds(User_id, objectData.WorldName, objectData.Width, objectData.Height);
 
-        // Check if no objects were found
         if (result == null)
         {
             return NotFound($"No objects found in world with name: {objectData.WorldName}");
@@ -65,8 +81,9 @@ public class ObjectController : ControllerBase
     }
 
 
+
     [HttpPost("RemoveWorld")]
-    public ActionResult RemoveWorld(Models.RemoveWorld objectData)  // Your original method
+    public ActionResult RemoveWorld(Models.RemoveWorld objectData) 
     {
         var result = _objectRepository.DeleteWorld(objectData.WorldId).Result;
         if (result == null)
