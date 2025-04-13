@@ -12,9 +12,7 @@ using projectapi.Webapi.Repositories;
 namespace projectapi.Webapi.Controllers;
 
 [ApiController]
-//[Route("[controller]")] is classname as route, [Route("blablabla")] is blablabla: as route localhost:7058/blablabla
 [Route("[controller]")]
-//[Authorize]
 
 public class ObjectController : ControllerBase
 {
@@ -35,7 +33,6 @@ public class ObjectController : ControllerBase
     {
         Guid User_id = new Guid(_auth.GetCurrentAuthenticatedUserId());
 
-        // Fetch worlds by PlayerId
         var result = await _objectRepository.GetWorlds(User_id);
 
         if (result == null || !result.Any())
@@ -95,16 +92,11 @@ public class ObjectController : ControllerBase
     }
 
     //Objects
-
-    //[HttpGet(Name = "ObjectData")] only use the GET if route is public, else use POST
-
     [HttpPost("LoadAllObjects")]
     public ActionResult LoadAllObjects(Models.ReadAllObjectsRequest2 objectData)
     {
-        // Call the repository method with WorldId
         var result = _objectRepository.ReadObjectsAsync(objectData.WorldId).Result;
 
-        // Check if no objects were found
         if (result == null || result.Count == 0)
         {
             return NotFound($"No objects found in world with ID: {objectData.WorldId}");
@@ -115,7 +107,7 @@ public class ObjectController : ControllerBase
 
 
     [HttpPost("LoadObjectData")]
-    public ActionResult LoadObjectData(Models.ReadObjectsRequest objectData)  // Your original method
+    public ActionResult LoadObjectData(Models.ReadObjectsRequest objectData)
     {
         var result = _objectRepository.ReadObjectDataAsync(objectData.ObjectId).Result;
 
@@ -126,17 +118,6 @@ public class ObjectController : ControllerBase
 
         return Ok(result);
     }
-
-    //[HttpPost("GetUser")]
-    //public async Task<ActionResult> GetUser(Models.LoginRequest loginRequest)
-    //{
-    //    var result = await _objectRepository.GetUser(loginRequest);
-
-    //    if (result == null)
-    //        return NotFound($"No user found with username: {loginRequest.Username}");
-
-    //    return Ok(result);
-    //}
 
     [HttpPost("AddObject")]
     public async Task<IActionResult> AddObject(Models.InsertObjectRequest objectData)
@@ -172,10 +153,6 @@ public class ObjectController : ControllerBase
     [HttpPost("RemoveObject")]
      public async Task<Models.DeleteObjectRequest?> RemoveObject(Models.DeleteObjectRequest objectData)
     {
-
-        // Extract the AccessToken from the request body
         return await _objectRepository.DeleteObjectsAsync(new DeleteObjectRequest { ObjectId = objectData.ObjectId });
-
-
     }
 }

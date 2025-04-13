@@ -1,13 +1,8 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
+﻿
 using Dapper;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using projectapi.Webapi.Interfaces;
 using projectapi.Webapi.Models;
-//using projectapi.Webapi.Interfaces;
 
 namespace projectapi.Webapi.Repositories
 {
@@ -19,8 +14,6 @@ namespace projectapi.Webapi.Repositories
         {
             sqlConnectionString = connectionString;
         }
-
-        //Worlds
 
         public async Task<IEnumerable<Models.World>> GetWorlds(Guid playerId)
         {
@@ -79,19 +72,6 @@ namespace projectapi.Webapi.Repositories
             }
         }
 
-        //Removed
-        //public async Task<string?> GetUser(Models.LoginRequest loginRequest)
-        //{
-        //    using (var sqlConnection = new SqlConnection(sqlConnectionString))
-        //    {
-        //        var query = "SELECT Id, PasswordHash FROM [Periode3].[auth].[AspNetUsers] WHERE UserName = @UserName";
-
-        //        return await sqlConnection.QuerySingleOrDefaultAsync<string>(
-        //            query, new { UserName = loginRequest.Username }
-        //        );
-        //    }
-        //}
-
         //Objects
 
         public async Task<Models.Object?> ReadObjectDataAsync(Guid objectId)
@@ -141,7 +121,6 @@ namespace projectapi.Webapi.Repositories
             using (var sqlConnection = new SqlConnection(sqlConnectionString))
             {
                 var query = "DELETE FROM Objects WHERE ObjectId = @ObjectId";
-                //return await sqlConnection.QuerySingleOrDefaultAsync<Models.DeleteObjectRequest>(query, new { ObjectId = objectId });
                 return await sqlConnection.QuerySingleOrDefaultAsync<Models.DeleteObjectRequest>(query, new { ObjectId = objectId.ObjectId });
 
 

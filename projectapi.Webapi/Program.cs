@@ -12,7 +12,7 @@ builder.Services.AddAuthorization();
 builder.Services
     .AddIdentityApiEndpoints<IdentityUser>(options =>
     {
-        //options.User.RequireUniqueEmail = true;
+        options.User.RequireUniqueEmail = true;
         //options.SignIn.RequireConfirmedPhoneNumber = true;
 
         options.Password.RequireDigit = true;
@@ -33,21 +33,18 @@ builder.Services
     });
 
 
-// Add services to the container.
 builder.Services.AddTransient<IObjectRepository, ObjectRepository>(o => new ObjectRepository(connectionString));
 //builder.Services.AddScoped<IAuthenticationService, AspNetIdentityAuthenticationService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<IAuthenticationService, AspNetIdentityAuthenticationService>();
 builder.Services.AddControllers();
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello world, the API is up");
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
